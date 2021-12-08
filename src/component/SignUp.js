@@ -29,7 +29,7 @@ export default function SignUp() {
 
   const addUser = async () => {
       
-    const response = await axios.post("https://tweteer-backen.herokuapp.com//signUp", {
+    const response = await axios.post("https://tweteer-backen.herokuapp.com/signUp", {
         account: account,
       email: email,
       imageProfile:img,

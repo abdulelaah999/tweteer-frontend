@@ -12,7 +12,7 @@ export default function Account({token}) {
 
     useEffect(() => {
         const getProfileData = async()=>{
-            const result = await axios.get(`https://tweteer-backen.herokuapp.com//profile/${id}`);
+            const result = await axios.get(`https://tweteer-backen.herokuapp.com/profile/${id}`);
             setProfileInfo(result.data)
         }
 

@@ -17,13 +17,13 @@ export default function Home({token}) {
         const getDate = async()=>{
 
             try {
-                const response = await axios.get("https://tweteer-backen.herokuapp.com//tweets",{
+                const response = await axios.get("https://tweteer-backen.herokuapp.com/tweets",{
                 })
             setTweets(response.data)
 
 
             if(token){
-                const likes= await axios.get("https://tweteer-backen.herokuapp.com//allFavorite",{
+                const likes= await axios.get("https://tweteer-backen.herokuapp.com/allFavorite",{
                     headers: { authorization: `Bearer ${token}`  }
                     })
                 console.log(likes.data,"likes");
@@ -65,7 +65,7 @@ export default function Home({token}) {
 
       const addTweet=async ()=>{
         const result = await axios.post(
-          "https://tweteer-backen.herokuapp.com//add-tweet",
+          "https://tweteer-backen.herokuapp.com/add-tweet",
           {
             text: text,
             img: img,
@@ -81,14 +81,14 @@ export default function Home({token}) {
 
 
     const deleteTweet = async(id)=>{
-        const response = await axios.delete(`https://tweteer-backen.herokuapp.com//cut-one/${id}`,{
+        const response = await axios.delete(`https://tweteer-backen.herokuapp.com/cut-one/${id}`,{
             headers: { authorization: `Bearer ${token}`  }
         })
         setTweets(response.data)
     }
     
     const favTweet= async(tweetId)=>{
-        const response = await axios.post("https://tweteer-backen.herokuapp.com//favorite",{
+        const response = await axios.post("https://tweteer-backen.herokuapp.com/favorite",{
             tweetId: tweetId
         },{
             headers: { authorization: `Bearer ${token}`  }
