@@ -8,7 +8,7 @@ import{AiOutlinePoweroff}from 'react-icons/ai'
 
 export default function NavBar(props) {
     return (
-        <div id="Navbar">
+        <div className="Navbar">
             {
                 // props.token? "" : 
             }
@@ -16,18 +16,18 @@ export default function NavBar(props) {
             <Link to="/home" className="home-logo"><GrTwitter/></Link>
 
             {
-                props.token? <ul id className="nav-span">
+                props.token? <ul className="nav-span">
                 {/*  className="nav-span" */}
-               <li id='a'> <Link to="/users" className="nav-link">
+               <li> <Link to="/users" className="nav-link">
                     <BsPersonSquare/>  Accounts
                 </Link>
                 </li>
-                <li id='a' >
+                <li>
                 <Link to="/" onClick={()=>{
                 // props.setToken("")
                 localStorage.setItem("token", "")
                 }} className="nav-link"><AiOutlinePoweroff/>  Log out</Link></li>
-                <li id='a'>
+                <li>
                 <Link to="/favorite" className="nav-link"><AiFillLike/>  Likes</Link>
                 </li>
                 </ul>
